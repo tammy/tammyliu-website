@@ -19,9 +19,9 @@ export default async function Writing() {
 
   return (
     <main className="px-10 py-16 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-2">writing</h2>
-      <p className="text-lg opacity-75 mb-10">
-        Tammy is learning. Endlessly.
+      <h2 className="text-3xl font-bold mb-4">writing</h2>
+      <p className="text-sm mb-10">
+        TIL. My blog of thoughts and of aspirationally whimsy.
       </p>
       {/* Subscribe link — uncomment when ready to make the feed discoverable.
       <Link
@@ -46,9 +46,13 @@ export default async function Writing() {
                 <span className="font-semibold group-hover:text-yellow-gold transition-colors duration-200">
                   {post.title}
                 </span>
-                <span className="text-xs opacity-50 font-dm-mono">{post.date}</span>
+                <span className="text-xs opacity-50 font-dm-mono">
+                  {post.date}
+                </span>
                 {post.excerpt && (
-                  <span className="text-sm opacity-70 mt-1">{post.excerpt}</span>
+                  <span className="text-sm opacity-70 mt-1">
+                    {post.excerpt}
+                  </span>
                 )}
               </div>
               {post.image && (

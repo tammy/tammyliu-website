@@ -8,9 +8,19 @@ export type RecipeMeta = {
   slug: string;
   title: string;
   duration: string;
+  serving: string;
   date: string;
   image?: string; // path relative to /public, e.g. /recipes/salmon.jpg
 };
+
+export function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
 
 export function getRecipes(): RecipeMeta[] {
   const files = fs.readdirSync(recipesDir).filter((f) => f.endsWith(".mdx"));

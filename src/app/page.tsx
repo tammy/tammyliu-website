@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+const figureSkatingUrl = "https://www.instagram.com/tamz.on.ice";
+
 function CustomLink({
   href,
   className = "",
@@ -20,25 +22,23 @@ function CustomLink({
 }
 
 function Title() {
-  const goalsUrl = "https://asana.com/features/goals-reporting/goals";
-
   return (
     <h1 className="flex font-bold text-graphite-heading">
-      <p><span className="text-yellow-gold">Tammy</span> is building software by daylight ☀️</p>
-    </h1>
-  );
-}
-
-function SubTitle() {
-  const figureSkatingUrl = "https://www.instagram.com/tamz.on.ice";
-  return (
-    <h4 className="flex text-graphite-heading">
       <p>
+        <span className="text-yellow-gold">Tammy</span> is{" "}
         <CustomLink className="underline" href={figureSkatingUrl}>
           figure skater
         </CustomLink>{" "}
         by moonlight &#127769;
       </p>
+    </h1>
+  );
+}
+
+function SubTitle() {
+  return (
+    <h4 className="flex text-graphite-heading">
+      <p> software engineer by daylight ☀️ </p>
     </h4>
   );
 }

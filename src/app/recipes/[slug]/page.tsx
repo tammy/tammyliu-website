@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getRecipe, getRecipes } from "@/lib/recipes";
+import { getRecipe, getRecipes, formatDate } from "@/lib/recipes";
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -23,6 +23,9 @@ const components = {
   li: (props: React.HTMLAttributes<HTMLLIElement>) => (
     <li className="pl-1" {...props} />
   ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong className="text-yellow-gold" {...props} />
+  ),
 };
 
 export async function generateStaticParams() {
@@ -37,12 +40,15 @@ export default function RecipePage({
   const { meta, content } = getRecipe(params.slug);
 
   return (
-    <main className="px-10 py-16 max-w-2xl">
-      <h1 className="text-3xl font-bold mb-1">{meta.title}</h1>
-      <p className="text-sm opacity-50 mb-10">{meta.duration}</p>
+    <main className="px-10 py-16 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-2">{meta.title}</h1>
+      <p className="text-sm opacity-100 font-dm-mono mb-10">
+        {meta.duration} · {meta.serving}
+      </p>
       <article className="flex flex-col gap-4 leading-relaxed">
         <MDXRemote source={content} components={components} />
       </article>
+
     </main>
   );
 }
