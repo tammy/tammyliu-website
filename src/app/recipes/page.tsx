@@ -6,7 +6,7 @@ export default function Recipes() {
   const recipes = getRecipes();
 
   return (
-    <main className="px-10 py-16 max-w-4xl">
+    <main className="px-10 py-16 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-2">recipes</h2>
       <p className="text-lg opacity-75 mb-10">
         Life is busy, but you deserve good food.
