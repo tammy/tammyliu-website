@@ -11,7 +11,7 @@ export default function Work() {
       <h2 className="text-3xl font-bold mb-4">work</h2>
       <p className="text-sm mb-10">
         <b>My daily 9-5, or 11-7, or whatever needs be.</b>
-        I'm traditionally a full stack product engineer, right now I work on AI
+        I&apos;m traditionally a full stack product engineer, right now I work on AI
         retrieval.
       </p>
 
