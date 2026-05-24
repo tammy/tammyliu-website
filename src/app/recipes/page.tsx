@@ -12,8 +12,8 @@ export default function Recipes() {
 
       <p className="text-sm mb-10">
         <b>Life is busy, but you deserve good food.</b> Daily cooking is an
-        endurance sport in itself, and you need something easy, mindless, and
-        still tasty. These are my weekly staples.
+        endurance sport, so I needed something easy, mindless, and still tasty.
+        These are my weekly staples.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {recipes.map((recipe) => (
