@@ -1,6 +1,30 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getRecipe, getRecipes } from "@/lib/recipes";
 
+const components = {
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h1 className="text-2xl font-bold mt-4" {...props} />
+  ),
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2 className="text-xl font-bold mt-4" {...props} />
+  ),
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 className="text-lg font-semibold mt-3" {...props} />
+  ),
+  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h4 className="text-base font-semibold mt-2" {...props} />
+  ),
+  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
+    <ul className="list-disc list-outside pl-5 flex flex-col gap-1" {...props} />
+  ),
+  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+    <ol className="list-decimal list-outside pl-5 flex flex-col gap-1" {...props} />
+  ),
+  li: (props: React.HTMLAttributes<HTMLLIElement>) => (
+    <li className="pl-1" {...props} />
+  ),
+};
+
 export async function generateStaticParams() {
   return getRecipes().map((r) => ({ slug: r.slug }));
 }
@@ -17,7 +41,7 @@ export default function RecipePage({
       <h1 className="text-3xl font-bold mb-1">{meta.title}</h1>
       <p className="text-sm opacity-50 mb-10">{meta.duration}</p>
       <article className="flex flex-col gap-4 leading-relaxed">
-        <MDXRemote source={content} />
+        <MDXRemote source={content} components={components} />
       </article>
     </main>
   );

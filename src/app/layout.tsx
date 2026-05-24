@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Noto_Sans_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Noto_Sans, Noto_Sans_Mono, Plus_Jakarta_Sans, DM_Mono } from "next/font/google";
 import "@/app/globals.css";
 import Nav from "@/app/components/Nav";
 
@@ -19,6 +19,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
 });
 
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
+});
+
 // Main app
 export const metadata: Metadata = {
   title: "Tammy Liu",
@@ -32,9 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={plusJakartaSans.className}>
+      <body className={`${plusJakartaSans.className} ${dmMono.variable}`}>
         <Nav />
         {children}
+        <footer className="fixed bottom-0 right-0 p-6 text-xs opacity-30">
+          © Tammy Liu
+        </footer>
       </body>
     </html>
   );

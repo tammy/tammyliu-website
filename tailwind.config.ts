@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "dm-mono": ["var(--font-dm-mono)", "monospace"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,6 +20,11 @@ const config: Config = {
         "blue-dark": "#000129",
         "blue-medium": "#0B85DA",
         "yellow-gold": "#FAB52D",
+        "graphite-bg": "#1c1917",
+        "graphite-surface": "#292524",
+        "graphite-heading": "#fafaf9",
+        "graphite-body": "#d6d3d1",
+        "graphite-muted": "#78716c",
       },
     },
   },

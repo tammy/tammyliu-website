@@ -3,23 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-
-  --blue-dark: #000129,
-  --blue-medium: #0B85DA,
-  --yellow-gold: #FAB52D,
+  --foreground-rgb: 214, 211, 209;     /* graphite-body  #d6d3d1 */
+  --background-start-rgb: 28, 25, 23;  /* graphite-bg    #1c1917 */
+  --background-end-rgb: 28, 25, 23;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FAB52D; /* yellow-gold */
 }
 
 @layer utilities {
@@ -31,8 +26,4 @@ body {
 h1 {
   font-size: 3em;
   line-height: 1;
-}
-
-header {
-  padding: 10vw 10vw 2.5vw;
 }

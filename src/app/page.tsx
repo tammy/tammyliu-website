@@ -1,10 +1,5 @@
 import Link from "next/link";
 
-const socialLinks = [
-  { href: "https://www.linkedin.com/in/tammyliutm/", text: "LinkedIn" },
-  { href: "https://github.com/tammy", text: "Github" },
-];
-
 function CustomLink({
   href,
   className = "",
@@ -24,35 +19,12 @@ function CustomLink({
   );
 }
 
-function SocialsSection() {
-  return (
-    <div className="flex">
-      {socialLinks.map((link) => (
-        <SocialLink key={link.href} {...link} />
-      ))}
-    </div>
-  );
-}
-
-function SocialLink({ href, text }: { href: string; text: string }) {
-  return (
-    <CustomLink className="m-2 font-mono" href={href}>
-      {text.toLowerCase()}
-    </CustomLink>
-  );
-}
-
 function Title() {
   const goalsUrl = "https://asana.com/features/goals-reporting/goals";
 
   return (
-    <h1 className="flex">
-      <p>
-        Tammy is building{" "}
-        <CustomLink className="underline underline-offset-4" href={goalsUrl}>
-          Goals at Asana
-        </CustomLink>
-      </p>
+    <h1 className="flex font-bold text-graphite-heading">
+      <p><span className="text-yellow-gold">Tammy</span> is building software by daylight ☀️</p>
     </h1>
   );
 }
@@ -60,9 +32,8 @@ function Title() {
 function SubTitle() {
   const figureSkatingUrl = "https://www.instagram.com/tamz.on.ice";
   return (
-    <h4 className="flex">
+    <h4 className="flex text-graphite-heading">
       <p>
-        senior software engineer by daylight ☀️,{" "}
         <CustomLink className="underline" href={figureSkatingUrl}>
           figure skater
         </CustomLink>{" "}
@@ -74,12 +45,11 @@ function SubTitle() {
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between space-y-4 p-10">
-      <header className="flex flex-col w-full justify-center space-y-8">
+    <main className="flex flex-col items-center justify-center min-h-[80vh] text-center space-y-4 p-10">
+      <header className="flex flex-col items-center space-y-4">
         <Title />
         <SubTitle />
       </header>
-      <SocialsSection />
     </main>
   );
 }
