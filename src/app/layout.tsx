@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
+import { Noto_Sans, Noto_Sans_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "@/app/globals.css";
+import Nav from "@/app/components/Nav";
 
 // Fonts
 const notoSans = Noto_Sans({
@@ -11,6 +12,11 @@ const notoSans = Noto_Sans({
 const notoSansMono = Noto_Sans_Mono({
   subsets: ["latin"],
   variable: "--font-noto-sans-mono",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
 });
 
 // Main app
@@ -26,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSans.className}>{children}</body>
+      <body className={plusJakartaSans.className}>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }
