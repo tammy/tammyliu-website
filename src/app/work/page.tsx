@@ -12,15 +12,6 @@ export default function Work() {
       <p className="text-sm mb-10">
         My daily 9-5, or 11-7. Or...who even knows.
       </p>
-      <section className="mb-10">
-        <h3 className="text-xs uppercase tracking-widest opacity-90 mb-4">
-          resume
-        </h3>
-        <div className="border border-white/10 rounded-xl px-6 py-5 text-sm opacity-90">
-          coming soon
-        </div>
-      </section>
-
       <section>
         <h3 className="text-xs uppercase tracking-widest opacity-90 mb-4">
           links
