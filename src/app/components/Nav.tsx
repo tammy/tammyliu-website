@@ -14,7 +14,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-6 px-10 py-6 font-dm-mono text-sm">
+    <nav className="flex justify-center gap-6 px-10 py-6 font-dm-mono text-sm">
       {links.map(({ href, label }) =>
         href === pathname ? (
           <span
