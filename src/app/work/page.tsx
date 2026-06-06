@@ -10,9 +10,7 @@ export default function Work() {
     <main className="px-10 py-16 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-4">work</h2>
       <p className="mb-10">
-        <b>My daily 9-5, or 11-7, or whatever needs be.</b>
-        I&apos;m traditionally a full stack product engineer, right now I work on AI
-        retrieval.
+        Full stack product engineer, currently working on AI retrieval.
       </p>
 
       <section>
