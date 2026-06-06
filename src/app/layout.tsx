@@ -3,6 +3,8 @@ import { Noto_Sans, Noto_Sans_Mono, Plus_Jakarta_Sans, DM_Mono } from "next/font
 import "@/app/globals.css";
 import Nav from "@/app/components/Nav";
 import ThemeToggle from "@/app/components/ThemeToggle";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Fonts
 const notoSans = Noto_Sans({
@@ -53,6 +55,8 @@ export default function RootLayout({
         <footer className="fixed bottom-0 right-0 p-6 text-xs opacity-30">
           © Tammy Liu
         </footer>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
