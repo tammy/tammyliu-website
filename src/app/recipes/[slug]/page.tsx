@@ -54,16 +54,16 @@ export default async function RecipePage({
     <main className="px-6 py-16 max-w-5xl mx-auto">
       {/* Mobile: single column. Desktop: two columns */}
       <div className="flex flex-col md:flex-row md:gap-10 md:items-start">
-        {/* Left column on desktop: image */}
+        {/* Left column on desktop: larger image, hidden on mobile */}
         {meta.image && (
-          <div className="hidden md:block md:relative md:w-96 md:shrink-0 rounded-xl overflow-hidden">
+          <div className="hidden md:block md:w-96 md:shrink-0 rounded-xl overflow-hidden">
             <Image
               src={meta.image}
               alt={meta.title}
-              width={384}
-              height={0}
-              style={{ height: "auto" }}
-              className="w-full"
+              width={meta.imageWidth ?? 384}
+              height={meta.imageHeight ?? 384}
+              sizes="384px"
+              className="w-full h-auto"
             />
           </div>
         )}
@@ -82,16 +82,16 @@ export default async function RecipePage({
             </article>
           )}
 
-          {/* Image appears here on mobile, between intro and ingredients */}
+          {/* On mobile: image appears between intro and ingredients */}
           {meta.image && (
-            <div className="block md:hidden relative rounded-xl overflow-hidden mb-6">
+            <div className="block md:hidden rounded-xl overflow-hidden mb-6">
               <Image
                 src={meta.image}
                 alt={meta.title}
-                width={800}
-                height={0}
-                style={{ height: "auto" }}
-                className="w-full"
+                width={meta.imageWidth ?? 800}
+                height={meta.imageHeight ?? 800}
+                sizes="100vw"
+                className="w-full h-auto"
               />
             </div>
           )}
