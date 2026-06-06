@@ -20,8 +20,8 @@ export default async function Writing() {
   return (
     <main className="px-10 py-16 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-4">writing</h2>
-      <p className="text-sm mb-10">
-        TIL. My blog of thoughts and of aspirationally whimsy.
+      <p className="mb-10">
+        TIL. My blog of thoughts and of aspirational whimsy.
       </p>
       {/* Subscribe link — uncomment when ready to make the feed discoverable.
       <Link
@@ -40,7 +40,7 @@ export default async function Writing() {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex gap-4 items-start border border-white/10 hover:border-yellow-gold/40 rounded-xl px-4 py-4 transition-colors duration-200"
+              className="group flex gap-4 items-start border border-black/10 dark:border-white/10 hover:border-yellow-gold/40 rounded-xl px-4 py-4 transition-colors duration-200"
             >
               <div className="flex flex-col gap-1 flex-1">
                 <span className="font-semibold group-hover:text-yellow-gold transition-colors duration-200">
@@ -50,9 +50,7 @@ export default async function Writing() {
                   {post.date}
                 </span>
                 {post.excerpt && (
-                  <span className="text-sm opacity-70 mt-1">
-                    {post.excerpt}
-                  </span>
+                  <span className="opacity-70 mt-1">{post.excerpt}</span>
                 )}
               </div>
               {post.image && (

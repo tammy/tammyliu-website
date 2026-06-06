@@ -23,7 +23,7 @@ function CustomLink({
 
 function Title() {
   return (
-    <h1 className="flex font-bold text-graphite-heading">
+    <h1 className="flex font-bold text-graphite-bg dark:text-graphite-heading">
       <p>
         <span className="text-yellow-gold">Tammy</span> is{" "}
         <CustomLink className="underline" href={figureSkatingUrl}>
@@ -37,7 +37,7 @@ function Title() {
 
 function SubTitle() {
   return (
-    <h4 className="flex text-graphite-heading">
+    <h4 className="flex text-graphite-bg dark:text-graphite-heading">
       <p> software engineer by daylight ☀️ </p>
     </h4>
   );

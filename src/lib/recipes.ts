@@ -10,7 +10,8 @@ export type RecipeMeta = {
   duration: string;
   serving: string;
   date: string;
-  image?: string; // path relative to /public, e.g. /recipes/salmon.jpg
+  image?: string;
+  previewImage?: string;
 };
 
 export function formatDate(date: string): string {

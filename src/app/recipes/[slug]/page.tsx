@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getRecipe, getRecipes, formatDate } from "@/lib/recipes";
+import { getRecipe, getRecipes } from "@/lib/recipes";
 
 const components = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -40,15 +41,30 @@ export default function RecipePage({
   const { meta, content } = getRecipe(params.slug);
 
   return (
-    <main className="px-10 py-16 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-2">{meta.title}</h1>
-      <p className="text-sm opacity-100 font-dm-mono mb-10">
-        {meta.duration} · {meta.serving}
-      </p>
-      <article className="flex flex-col gap-4 leading-relaxed">
-        <MDXRemote source={content} components={components} />
-      </article>
-
+    <main className="px-10 py-16 max-w-5xl mx-auto">
+      <div className="flex gap-10 items-start">
+        {meta.image && (
+          <div className="relative w-80 shrink-0 rounded-xl overflow-hidden">
+            <Image
+              src={meta.image}
+              alt={meta.title}
+              width={320}
+              height={0}
+              style={{ height: "auto" }}
+              className="w-full"
+            />
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
+          <h1 className="text-3xl font-bold mb-2">{meta.title}</h1>
+          <p className="text-sm opacity-60 font-dm-mono mb-8">
+            {meta.duration} · {meta.serving}
+          </p>
+          <article className="flex flex-col gap-4 leading-relaxed">
+            <MDXRemote source={content} components={components} />
+          </article>
+        </div>
+      </div>
     </main>
   );
 }
