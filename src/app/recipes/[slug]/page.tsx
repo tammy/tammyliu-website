@@ -33,12 +33,13 @@ export async function generateStaticParams() {
   return getRecipes().map((r) => ({ slug: r.slug }));
 }
 
-export default function RecipePage({
+export default async function RecipePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { meta, content } = getRecipe(params.slug);
+  const { slug } = await params;
+  const { meta, content } = getRecipe(slug);
 
   return (
     <main className="px-10 py-16 max-w-5xl mx-auto">
