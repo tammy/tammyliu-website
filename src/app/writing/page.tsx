@@ -59,6 +59,7 @@ export default async function Writing() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="112px"
                     className="object-cover"
                   />
                 </div>

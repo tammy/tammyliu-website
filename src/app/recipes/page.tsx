@@ -27,6 +27,7 @@ export default function Recipes() {
                 src={recipe.previewImage ?? recipe.image!}
                 alt={recipe.title}
                 fill
+                sizes="(min-width: 640px) 440px, 100vw"
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
               />
             ) : (

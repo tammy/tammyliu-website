@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { imageSize } from "image-size";
 
 const recipesDir = path.join(process.cwd(), "src/content/recipes");
 
@@ -11,8 +12,18 @@ export type RecipeMeta = {
   serving: string;
   date: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   previewImage?: string;
 };
+
+function withImageDimensions(meta: RecipeMeta): RecipeMeta {
+  if (!meta.image) return meta;
+  const { width, height } = imageSize(
+    fs.readFileSync(path.join(process.cwd(), "public", meta.image))
+  );
+  return { ...meta, imageWidth: width, imageHeight: height };
+}
 
 export function formatDate(date: string): string {
   return new Date(date).toLocaleDateString("en-US", {
@@ -39,5 +50,5 @@ export function getRecipe(slug: string): { meta: RecipeMeta; content: string } {
   const file = path.join(recipesDir, `${slug}.mdx`);
   const raw = fs.readFileSync(file, "utf8");
   const { data, content } = matter(raw);
-  return { meta: data as RecipeMeta, content };
+  return { meta: withImageDimensions(data as RecipeMeta), content };
 }

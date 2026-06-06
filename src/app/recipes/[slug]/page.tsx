@@ -33,25 +33,26 @@ export async function generateStaticParams() {
   return getRecipes().map((r) => ({ slug: r.slug }));
 }
 
-export default function RecipePage({
+export default async function RecipePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { meta, content } = getRecipe(params.slug);
+  const { slug } = await params;
+  const { meta, content } = getRecipe(slug);
 
   return (
     <main className="px-10 py-16 max-w-5xl mx-auto">
       <div className="flex gap-10 items-start">
         {meta.image && (
-          <div className="relative w-80 shrink-0 rounded-xl overflow-hidden">
+          <div className="w-80 shrink-0 rounded-xl overflow-hidden">
             <Image
               src={meta.image}
               alt={meta.title}
-              width={320}
-              height={0}
-              style={{ height: "auto" }}
-              className="w-full"
+              width={meta.imageWidth ?? 320}
+              height={meta.imageHeight ?? 320}
+              sizes="320px"
+              className="w-full h-auto"
             />
           </div>
         )}
