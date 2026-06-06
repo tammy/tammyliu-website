@@ -64,6 +64,7 @@ export default async function RecipePage({
               height={meta.imageHeight ?? 384}
               sizes="384px"
               className="w-full h-auto"
+              loading="eager"
             />
           </div>
         )}
@@ -92,6 +93,7 @@ export default async function RecipePage({
                 height={meta.imageHeight ?? 800}
                 sizes="100vw"
                 className="w-full h-auto"
+                loading="eager"
               />
             </div>
           )}
