@@ -5,13 +5,30 @@
 :root {
   --foreground: 28, 25, 23;           /* #1c1917 dark text for light mode */
   --background: 250, 250, 249;        /* #fafaf9 warm white */
-  --heading: 250, 181, 45;            /* #FAB52D yellow-gold */
+
+  /* Brand palettes — kept available for reuse elsewhere in the app.
+     Orange is the active accent. Blue can be applied by setting
+     <html data-accent="blue"> (see AccentToggle, currently disabled). */
+  --orange-light: #e57e4a;            /* terracotta */
+  --orange-dark: #e8924f;             /* brightened terracotta */
+  --blue-light: #4a6ba8;              /* periwinkle */
+  --blue-dark: #7e9bd4;               /* lifted periwinkle */
+
+  --accent: var(--orange-light);
 }
 
 html.dark {
   --foreground: 214, 211, 209;        /* #d6d3d1 graphite-body */
   --background: 28, 25, 23;           /* #1c1917 graphite-bg */
-  --heading: 250, 181, 45;            /* #FAB52D yellow-gold */
+  --accent: var(--orange-dark);
+}
+
+/* Blue accent (toggle) — background stays graphite */
+html[data-accent="blue"] {
+  --accent: var(--blue-light);
+}
+html[data-accent="blue"].dark {
+  --accent: var(--blue-dark);
 }
 
 body {
@@ -20,7 +37,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: rgb(var(--heading));
+  color: var(--accent);
 }
 
 @layer utilities {

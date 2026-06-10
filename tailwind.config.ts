@@ -20,12 +20,13 @@ const config: Config = {
       colors: {
         "blue-dark": "#000129",
         "blue-medium": "#0B85DA",
-        "yellow-gold": "#FAB52D",
         "graphite-bg": "#1c1917",
         "graphite-surface": "#292524",
         "graphite-heading": "#fafaf9",
         "graphite-body": "#d6d3d1",
         "graphite-muted": "#78716c",
+        // theme-aware accent (orange by default, blue via toggle)
+        accent: "var(--accent)",
       },
     },
   },

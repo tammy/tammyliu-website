@@ -20,7 +20,7 @@ export default function Recipes() {
           <Link
             key={recipe.slug}
             href={`/recipes/${recipe.slug}`}
-            className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 hover:border-yellow-gold/40 transition-colors duration-200"
+            className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 hover:border-accent/40 transition-colors duration-200"
           >
             {recipe.previewImage ?? recipe.image ? (
               <Image

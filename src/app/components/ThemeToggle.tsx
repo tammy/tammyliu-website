@@ -20,8 +20,24 @@ export default function ThemeToggle() {
 
   function toggle() {
     const next = !dark;
+
+    // Suppress all transitions during the switch so links/text don't
+    // flash by animating their color change at different speeds.
+    const style = document.createElement("style");
+    style.appendChild(
+      document.createTextNode("*{transition:none !important}")
+    );
+    document.head.appendChild(style);
+
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
+
+    // Force a reflow so the color change applies while transitions are
+    // off, then restore transitions on the next frame.
+    window.getComputedStyle(document.body).getPropertyValue("opacity");
+    requestAnimationFrame(() => {
+      document.head.removeChild(style);
+    });
   }
 
   return (

@@ -19,7 +19,7 @@ export default function Nav() {
         href === pathname ? (
           <span
             key={href}
-            className="underline decoration-yellow-gold decoration-2 underline-offset-4"
+            className="underline decoration-accent decoration-2 underline-offset-4"
           >
             {label}
           </span>
@@ -27,7 +27,7 @@ export default function Nav() {
           <Link
             key={href}
             href={href}
-            className="hover:text-yellow-gold transition-colors ease-in-out duration-200"
+            className="hover:text-accent transition-colors ease-in-out duration-200"
           >
             {label}
           </Link>
