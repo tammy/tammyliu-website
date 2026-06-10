@@ -3,6 +3,9 @@ import { Noto_Sans, Noto_Sans_Mono, Plus_Jakarta_Sans, DM_Mono } from "next/font
 import "@/app/globals.css";
 import Nav from "@/app/components/Nav";
 import ThemeToggle from "@/app/components/ThemeToggle";
+// Blue accent toggle disabled for now — re-enable by uncommenting this
+// import and the <AccentToggle /> below.
+// import AccentToggle from "@/app/components/AccentToggle";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -44,12 +47,13 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}})()`,
+            __html: `(function(){/* blue accent disabled for now: if(localStorage.getItem('accent')==='blue'){document.documentElement.setAttribute('data-accent','blue')} */var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}})()`,
           }}
         />
       </head>
       <body className={`${plusJakartaSans.className} ${dmMono.variable}`}>
         <ThemeToggle />
+        {/* <AccentToggle /> */}
         <Nav />
         {children}
         <footer className="fixed bottom-0 right-0 p-6 text-xs opacity-30">

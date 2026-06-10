@@ -28,7 +28,7 @@ export default async function Writing() {
         href="https://tammyislearning.substack.com/feed"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-xs font-dm-mono opacity-50 hover:text-yellow-gold hover:opacity-100 transition-colors duration-200"
+        className="text-xs font-dm-mono opacity-50 hover:text-accent hover:opacity-100 transition-colors duration-200"
       >
         subscribe via RSS ↗
       </Link>
@@ -40,10 +40,10 @@ export default async function Writing() {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex gap-4 items-start border border-black/10 dark:border-white/10 hover:border-yellow-gold/40 rounded-xl px-4 py-4 transition-colors duration-200"
+              className="group flex gap-4 items-start border border-black/10 dark:border-white/10 hover:border-accent/40 rounded-xl px-4 py-4 transition-colors duration-200"
             >
               <div className="flex flex-col gap-1 flex-1">
-                <span className="font-semibold group-hover:text-yellow-gold transition-colors duration-200">
+                <span className="font-semibold group-hover:text-accent transition-colors duration-200">
                   {post.title}
                 </span>
                 <span className="text-xs opacity-50 font-dm-mono">

@@ -27,7 +27,7 @@ const components = {
     <li className="pl-1" {...props} />
   ),
   strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="text-yellow-gold" {...props} />
+    <strong className="text-accent" {...props} />
   ),
 };
 

@@ -13,7 +13,7 @@ function CustomLink({
 }) {
   return (
     <Link
-      className={`underline-offset-auto	hover:text-yellow-gold hover:transition-colors ease-in-out duration-200 ${className}`}
+      className={`underline-offset-auto hover:text-accent hover:transition-colors ease-in-out duration-200 ${className}`}
       href={href}
     >
       {children}
@@ -25,7 +25,7 @@ function Title() {
   return (
     <h1 className="flex font-bold text-graphite-bg dark:text-graphite-heading">
       <p>
-        <span className="text-yellow-gold">Tammy</span> is{" "}
+        <span className="text-accent">Tammy</span> is{" "}
         <CustomLink className="underline" href={figureSkatingUrl}>
           figure skater
         </CustomLink>{" "}
